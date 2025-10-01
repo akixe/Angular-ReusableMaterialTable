@@ -1,0 +1,13 @@
+<div class="list-container">
+  <app-generic-table-component
+    [dataSource]="data()"
+    [displayedColumns]="columns"
+    (sort)="onSortTable($event)" />
+</div>
+
+<ng-template #createdAtCell let-element>
+  {{element['createdAt'] |date:'short'}}
+</ng-template>
+<ng-template #updatedAtCell let-element>
+  {{element['updatedAt'] |date:'short'}}
+</ng-template>
